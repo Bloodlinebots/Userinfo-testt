@@ -1,11 +1,13 @@
 {
   "name": "Telegram User Info Bot",
-  "description": "Telegram bot to show info about users, groups, channels, and bots.",
-  "keywords": ["telegram", "pyrogram", "user info", "bot"],
-  "stack": "container",
+  "description": "A simple Telegram bot to get info about users, groups, bots, and channels.",
+  "repository": "https://github.com/yourusername/your-repo-name",
+  "logo": "https://te.legra.ph/file/1f7166e3d7a56cf2f0e5e.jpg",
+  "keywords": ["telegram", "pyrogram", "userbot", "bot"],
+  "stack": "heroku-22",
   "env": {
     "BOT_TOKEN": {
-      "description": "Your bot token from BotFather",
+      "description": "Get your Bot Token from BotFather",
       "required": true
     },
     "API_ID": {
@@ -16,5 +18,20 @@
       "description": "Get this from https://my.telegram.org",
       "required": true
     }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "addons": [],
+  "scripts": {
+    "postdeploy": "echo ✅ Deployment successful! ✅"
   }
 }
