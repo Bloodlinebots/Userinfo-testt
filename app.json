@@ -1,0 +1,31 @@
+{
+  "name": "Telegram Info Bot",
+  "description": "A simple Telegram bot to fetch user or chat info using Pyrogram.",
+  "repository": "https://github.com/yourusername/tginfo-python-heroku",
+  "keywords": ["telegram", "bot", "pyrogram", "heroku"],
+  "env": {
+    "API_ID": {
+      "description": "Your Telegram API ID from https://my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Your Telegram API Hash from https://my.telegram.org",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Your Telegram bot token from BotFather",
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
